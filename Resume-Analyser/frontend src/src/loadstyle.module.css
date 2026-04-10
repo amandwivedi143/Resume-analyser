@@ -1,0 +1,79 @@
+.loadani {
+  min-height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  background: radial-gradient(circle at top, #eff6ff 0%, #dbeafe 40%, #bfdbfe 100%);
+}
+
+.loadanimation {
+  width: min(110px, 22vw);
+  display: block;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  background-color: #f8fafc;
+  position: relative;
+  animation: spin 0.9s linear infinite;
+}
+
+.loadanimation::before,
+.loadanimation::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  z-index: -1;
+  border-radius: 50%;
+  padding: 0.9rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(transparent 38%, #38bdf8, #2563eb);
+  width: 100%;
+}
+
+.loadanimation::after {
+  background: conic-gradient(transparent 28%, #60a5fa, #1d4ed8);
+  filter: blur(12px);
+}
+
+.loadani h1 {
+  margin: 20px 12px 0;
+  color: #1e3a8a;
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  letter-spacing: 0.2px;
+}
+
+.capstart {
+  position: absolute;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background: linear-gradient(184deg, #2563eb, #38bdf8);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: -0.48rem;
+}
+
+.loadblock {
+  background: #f8fafc;
+  width: 100%;
+  filter: blur(3px);
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
